@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oh Yeah Trading — My Prop Firm Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav"><div class="container nav-inner">
+  <a class="brand" href="index.html">
+    <span class="dot"></span>
+    <span>OH YEAH TRADING<small>PROP JOURNEY</small></span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Dashboard</a>
+    <a href="thoughts.html" class="cta">My Thoughts</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="container">
+  <h1>The honest numbers behind<br><span class="grad">my prop firm journey.</span></h1>
+  <p>Every account, every challenge, every payout — and every firm that closed on me. Real spend, real results, documented in the open.</p>
+
+  <div class="stats">
+    <div class="stat spend"><div class="k">Total Spend</div><div class="v" id="s-spend">—</div><div class="sub" id="s-accounts">— accounts</div></div>
+    <div class="stat payout"><div class="k">Realized Payout</div><div class="v" id="s-payout">—</div><div class="sub">paid &amp; in hand</div></div>
+    <div class="stat accounts"><div class="k">Firms Tried</div><div class="v" id="s-firms">—</div><div class="sub">across the journey</div></div>
+    <div class="stat"><div class="k">Secured but lost</div><div class="v" style="color:var(--secured)" id="s-lost">—</div><div class="sub">firms closed pre-payout</div></div>
+  </div>
+</div></header>
+
+<main class="container">
+
+  <section class="section">
+    <h2>Spend vs. Payout</h2>
+    <p class="lead">Each slice is a firm, sized by what I spent. Click any slice — or any card below — to open that firm's full story.</p>
+    <p class="lead" style="margin-top:-10px">Hover a slice to relive the verdict — every firm was either an <b style="color:var(--accent)">Oh Yeah</b> or an <b style="color:var(--danger)">Oh No</b>.</p>
+    <div class="chart-wrap">
+      <div class="wheel-box">
+        <canvas id="wheel" width="320" height="320"></canvas>
+        <div class="wheel-center" id="wheel-center">
+          <div class="score" id="score">
+            <div class="row oy"><span id="oy-count">0</span> OH YEAH</div>
+            <div class="vs">— VS —</div>
+            <div class="row on"><span id="on-count">0</span> OH NO</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <canvas id="bars" height="150"></canvas>
+        <div class="hint">Green = realized payout · Red = total spend</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>The Firms</h2>
+    <p class="lead">Click any firm to read the full journey — the wins, the fails, and the ones that got away.</p>
+    <div class="grid" id="firm-grid"></div>
+  </section>
+
+</main>
+
+<footer class="footer"><div class="container">© Oh Yeah Trading — ohyeahtrading.com</div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script>renderDashboard();</script>
+</body>
+</html>
